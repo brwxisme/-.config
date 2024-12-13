@@ -8,9 +8,10 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 config.color_scheme = "Eldritch"
+config.enable_wayland = false
 -- config.color_scheme = "Elementary"
 -- config.color_scheme = "Batman"
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.70
 
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
@@ -37,7 +38,7 @@ config.colors = {
 			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
 			-- label shown for this tab.
 			-- The default is "Normal"
-			intensity = "Normal",
+			intensity = "Bold",
 
 			-- Specify whether you want "None", "Single" or "Double" underline for
 			-- label shown for this tab.
@@ -51,6 +52,7 @@ config.colors = {
 			-- Specify whether you want the text to be rendered with strikethrough (true)
 			-- or not for this tab.  The default is false.
 			strikethrough = false,
+			-- font_color = "Pink",
 		},
 
 		-- Inactive tabs are the tabs that do not have focus
@@ -59,6 +61,7 @@ config.colors = {
 			fg_color = "#808080",
 
 			strikethrough = true,
+			italic = true,
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `inactive_tab`.
 		},
