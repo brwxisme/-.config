@@ -298,43 +298,43 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
   --  BRWXISME STARTS HERE
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-        theme = 'hyper',
-        config = {
-          header = vim.split(logo, '\n'),
-          shortcut = {
-            { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
-            {
-              icon = ' ',
-              icon_hl = '@variable',
-              desc = 'Files',
-              group = 'Label',
-              action = 'Telescope find_files',
-              key = 'f',
-            },
-            {
-              desc = ' Apps',
-              group = 'DiagnosticHint',
-              action = 'Telescope app',
-              key = 'a',
-            },
-            {
-              desc = ' dotfiles',
-              group = 'Number',
-              action = 'Telescope dotfiles',
-              key = 'd',
-            },
-          },
-        },
-      }
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-  },
+  -- {
+  --   'nvimdev/dashboard-nvim',
+  --   event = 'VimEnter',
+  --   config = function()
+  --     require('dashboard').setup {
+  --       -- config
+  --       theme = 'hyper',
+  --       config = {
+  --         header = vim.split(logo, '\n'),
+  --         shortcut = {
+  --           { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+  --           {
+  --             icon = ' ',
+  --             icon_hl = '@variable',
+  --             desc = 'Files',
+  --             group = 'Label',
+  --             action = 'Telescope find_files',
+  --             key = 'f',
+  --           },
+  --           {
+  --             desc = ' Apps',
+  --             group = 'DiagnosticHint',
+  --             action = 'Telescope app',
+  --             key = 'a',
+  --           },
+  --           {
+  --             desc = ' dotfiles',
+  --             group = 'Number',
+  --             action = 'Telescope dotfiles',
+  --             key = 'd',
+  --           },
+  --         },
+  --       },
+  --     }
+  --   end,
+  --   dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  -- },
   {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
@@ -348,6 +348,7 @@ require('lazy').setup({
         -- highlights.LineNr.fg = '#FFFFFF'
         highlights.LineNr.fg = '#7079a3'
         highlights.Comment.fg = '#4f5d9e'
+        highlights.Type.fg = '#03f9de'
       end,
       dim_inactive = true,
       transparent = true,
@@ -375,7 +376,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>a', function()
         harpoon:list():append()
       end)
-      vim.keymap.set('n', '<C-e>', function()
+      vim.keymap.set('n', '<C-h>', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
